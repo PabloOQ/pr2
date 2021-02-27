@@ -44,10 +44,13 @@ There are only 2 palettes, I plan to add one more on each of the applications of
 
 ## References
 
-https://coolors.co/ used to make the palettes
-The class material made by the teachers - @otsedom and Daniel
-Processing API
-Java API
+https://coolors.co/ used to make the palettes.
+
+The class material made by the teachers - @otsedom and Daniel.
+
+Processing API.
+
+Java API.
 
 ## Final view
 
