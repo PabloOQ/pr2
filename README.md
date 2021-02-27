@@ -24,6 +24,7 @@ Finally the application has 3 states, the introduction screen, the figure input 
 * Figure input screen:
   * Press SPACE to create a solid of revolution (needs at least 3 points on screen)
   * Click to create a new point on the screen (can only be created on the right side of the screen)
+  * Press R to delete all points
   * Press U to undo
 * Figure screen:
   * Press UP or DOWN to change the number of meridians that define the solid of revolution (minimum of 3 and maximum of 30)
