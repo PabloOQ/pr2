@@ -61,7 +61,7 @@ void keyReleased(){
     default:
       print("ERROR IN KEYLISTENER");
    }
- keyAllScreens();
+  keyAllScreens();
 }
 
 void mouseClicked(){
@@ -152,6 +152,10 @@ void keyFigureInputScreen(){
         points.remove(points.size()-1);
         break;
       }
+    case 'r':
+    case 'R':
+      points = new ArrayList<PVector>();
+      break;
   }
 }
 
@@ -183,9 +187,9 @@ void keyFigureScreen(){
     switch(key){
       case 'r':
       case 'R':
-       points = new ArrayList<PVector>();
-       state = 2;
-       break;
+        points = new ArrayList<PVector>();
+        state = 2;
+        break;
       default:
         break;
     }
@@ -253,11 +257,13 @@ void dragFigureScreen(){
 
 //Wheel screens
 void wheelFigureScreen(MouseEvent wheel){
+  float scale = 1;
   if (wheel.getCount() < 0){
-    shape.scale(1.1, 1.1, 1.1);
+    scale = 1.1;
   }else if (0 < wheel.getCount()){
-    shape.scale(0.9, 0.9, 0.9);
+    scale = 0.9;
   }
+  shape.scale(scale, scale, scale);
 }
 
 void printPoints(){
@@ -296,9 +302,9 @@ void showFigureInputScreen(){
 
 void instructions2D(){
   String[] text = { "Press SPACE to transform the points to a solid of revolution",
+                    "Press R to delete all points",
                     "Click to put a new point",
                     "Press U to undo",
-                    "",
                     "",
                     "Press LEFT or RIGHT to change the palette"};
 
@@ -348,18 +354,14 @@ void startShape(){
   for (int i = 1; i < figure.meridians.size(); i++){
     currentMeridian = figure.meridians.get(i);  //Retrieve meridians [1-size]
     for (int j = 0; j < previousMeridian.size(); j++){
-      shape.vertex(currentMeridian.get(j).x,currentMeridian.get(j).y,currentMeridian.get(j).z);
       shape.vertex(previousMeridian.get(j).x,previousMeridian.get(j).y,previousMeridian.get(j).z);
+      shape.vertex(currentMeridian.get(j).x,currentMeridian.get(j).y,currentMeridian.get(j).z);
     }
-    shape.vertex(currentMeridian.get(0).x,currentMeridian.get(0).y,currentMeridian.get(0).z);
     shape.vertex(previousMeridian.get(0).x,previousMeridian.get(0).y,previousMeridian.get(0).z);
-
+    shape.vertex(currentMeridian.get(0).x,currentMeridian.get(0).y,currentMeridian.get(0).z);
+    
     previousMeridian = currentMeridian;
   }
-  previousMeridian = figure.meridians.get(0);
-  currentMeridian = figure.meridians.get(1);
-  shape.vertex(currentMeridian.get(0).x,currentMeridian.get(0).y,currentMeridian.get(0).z);
-  shape.vertex(previousMeridian.get(0).x,previousMeridian.get(0).y,previousMeridian.get(0).z);
   shape.endShape();
 }
 
