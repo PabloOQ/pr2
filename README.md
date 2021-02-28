@@ -10,6 +10,7 @@ Author - Pablo Ortigosa
 There are 3 files, the main class (pr2.pde) which is both the view and the controller, and 2 objects classes which are the model, these are Palette.pde and Figure.pde. Inside pr1.pde the loop (draw) function has 2 parts:
 * logic() which is the controller, but is useless because the application relies heavily on the user's input.
 * show() this is the view method, it displays each thing on the screen.
+
 As said before, the application relies heavily on the user's input, as such there are 4 input components which are the main logic of the application:
 * keyReleased()
 * mouseClicked()
