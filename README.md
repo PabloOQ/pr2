@@ -52,6 +52,12 @@ Processing API.
 
 Java API.
 
-## Final view
+## Final look
 
-TODO
+![First screen](https://github.com/PabloOQ/pr2/blob/main/screen1.png)
+
+![Second screen](https://github.com/PabloOQ/pr2/blob/main/screen2.png)
+
+![Third screen](https://github.com/PabloOQ/pr2/blob/main/screen3.png)
+
+![Palette 2](https://github.com/PabloOQ/pr2/blob/main/palette2.png)
